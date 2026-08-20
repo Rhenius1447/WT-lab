@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reading Nook</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f2ebe5;
+            color: #4a3b32;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #4a3427;
+            padding: 12px 0;
+        }
+
+        nav a {
+            color: #f2ebe5;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        header {
+            padding: 30px 20px 20px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2b1e16;
+        }
+
+        .tagline {
+            font-size: 15px;
+            color: #6b5244;
+            margin: 6px 0 15px;
+        }
+
+        .cta-btn {
+            background-color: #6b442a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .banner {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #3b281c;
+            margin-bottom: 12px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 160px;
+            padding: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .card img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .card h3 {
+            font-size: 14px;
+            margin-top: 8px;
+            color: #2b1e16;
+        }
+
+        .card p {
+            font-size: 11px;
+            color: #7a685b;
+            margin-top: 2px;
+        }
+
+        ul {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .stars {
+            color: #f39c12;
+        }
+
+        footer {
+            background-color: #3b281c;
+            color: #d1c2b8;
+            padding: 15px 0;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+
+        footer strong {
+            color: #ffffff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#featured">Featured</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header id="home">
+        <div class="title">📚 The Reading Nook</div>
+        <div class="tagline">Great Stories, Fresh Pastries</div>
+        <button class="cta-btn">Browse Catalog</button>
+    </header>
+
+    <div class="banner">
+        <img src="C:\Users\Rhenius\Downloads\6.jpg" alt="Bookstore">
+    </div>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>The Reading Nook offers curated bestsellers, cozy quiet corners, and freshly baked pastries. Unwind with your favorite book while enjoying artisan teas and baked goods in a warm, welcoming environment.</p>
+    </section>
+
+    <section id="featured">
+        <h2>Featured Picks</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="C:\Users\Rhenius\Downloads\1.jpg" alt="Classic Fiction">
+                <h3>Classic Novels</h3>
+                <p>Timeless Treasures</p>
+            </div>
+            <div class="card">
+                <img src="C:\Users\Rhenius\Downloads\2.png" alt="Sci-Fi">
+                <h3>Sci-Fi & Fantasy</h3>
+                <p>Alternative Worlds</p>
+            </div>
+            <div class="card">
+                <img src="C:\Users\Rhenius\Downloads\3.jpg" alt="Croissants">
+                <h3>Butter Croissants</h3>
+                <p>Warm Bakery Treat</p>
+            </div>
+            <div class="card">
+                <img src="C:\Users\Rhenius\Downloads\4.jpg" alt="Teas">
+                <h3>Artisan Teas</h3>
+                <p>Herbal Blends</p>
+            </div>
+            <div class="card">
+                <img src="C:\Users\Rhenius\Downloads\5.jpg" alt="New Books">
+                <h3>New Releases</h3>
+                <p>Weekly Bestsellers</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>📖 Handpicked Book Selection</li>
+            <li>🥐 Fresh Daily Bakery Items</li>
+            <li>📶 Free High-Speed Wi-Fi</li>
+            <li>🛋️ Quiet & Comfortable Seating</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Customer Reviews</h2>
+        <p><span class="stars">⭐⭐⭐⭐⭐</span> "My favorite spot to read and relax on weekends."</p>
+        <p><span class="stars">⭐⭐⭐⭐⭐</span> "Wonderful book recommendations and delicious pastries!"</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>📍 The Reading Nook, Heritage Street</p>
+        <p>📞 +1 987 654 3210</p>
+        <p>✉️ contact@readingnook.com</p>
+    </section>
+
+    <footer>
+        <strong>The Reading Nook 📖</strong><br>
+        URK24CS1152 | Web Technology Lab
+    </footer>
+
+</body>
+</html>

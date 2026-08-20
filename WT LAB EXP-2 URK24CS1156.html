@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 Form and Media Elements</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family: Arial, sans-serif;
+  background:#f4f7f6;
+  color: #333;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container{
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Section */
+.header{
+  background: linear-gradient(135deg, #7b1fa2, #9c27b0);
+  color:white;
+  display:flex;
+  align-items:center;
+  padding: 15px 40px;
+}
+.header img{
+  width: 90px;
+  height: 90px;
+  border-radius:50%;
+  border: 3px solid #ffffff;
+  object-fit:cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.header h1{
+  flex:1;
+  text-align:center;
+  font-size: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Bar */
+nav{
+  background:#00bcd4;
+  display:flex;
+  align-items:center;
+  padding: 12px 40px;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
+}
+nav a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:bold;
+  font-size: 15px;
+  margin-right: 35px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+nav a:link { color:#ffffff; }
+nav a:visited { color:#e0f7fa; }
+nav a:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
+nav a:active { background:#00838f; color:white; }
+
+nav input{
+  margin-left:auto;
+  width: 250px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+/* Main Top Section Grid */
+.top{
+  display: flex;
+  gap: 20px;
+  padding: 25px 40px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+.skills{
+  flex: 1;
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.skills h2{
+  color: #7b1fa2;
+  margin-bottom: 12px;
+  font-size: 18px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 6px;
+}
+.skills p{
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #555;
+}
+progress{
+  width: 100%;
+  height: 12px;
+  accent-color: #00bcd4;
+  border-radius: 6px;
+}
+.video{
+  flex: 2;
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.video h2{
+  color: #7b1fa2;
+  margin-bottom: 12px;
+  font-size: 18px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 6px;
+}
+.media-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+video{
+  width: 100%;
+  max-width: 480px;
+  height: 230px;
+  border-radius: 8px;
+  background: #000;
+}
+audio{
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Form Container Section */
+.form-container{
+  display: flex;
+  gap: 25px;
+  padding: 25px 40px;
+  background: #ffffff;
+}
+fieldset{
+  flex: 1;
+  padding: 20px;
+  border: 1.5px solid #9c27b0;
+  border-radius: 10px;
+  background: #faf5fb;
+}
+legend{
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #9c27b0;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #444;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 4px 0 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 5px rgba(0,188,212,0.3);
+}
+input[type=radio], input[type=checkbox]{
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Bottom Grid for PDF Document and Map */
+.bottom{
+  display: flex;
+  gap: 25px;
+  padding: 25px 40px;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+.bottom-card {
+  flex: 1;
+  background: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.bottom-card h2{
+  color: #7b1fa2;
+  font-size: 18px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 6px;
+}
+embed, iframe {
+  width: 100%;
+  height: 280px;
+  border-radius: 8px;
+  border: 0;
+}
+
+/* Footer Section */
+footer{
+  background: #333333;
+  color: #e0e0e0;
+  padding: 20px 40px;
+  font-size: 14px;
+  margin-top: auto;
+}
+footer h3{
+  color: #00bcd4;
+  margin-bottom: 8px;
+}
+footer p{
+  margin: 3px 0;
+  color: #bbb;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <img src="D:\downloads\Rhenius passport.jpg" alt="Profile">
+    <h1>Rhenius N</h1>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#">Academics</a>
+    <a href="#">Achievements</a>
+    <a href="#">Friends</a>
+    <input type="search" placeholder="Search...">
+  </nav>
+
+  <!-- Skills & Media Section -->
+  <div class="top">
+    <div class="skills">
+      <h2>Skills</h2>
+      <p>Photoshop</p>
+      <progress value="90" max="100"></progress>
+      <p>Java</p>
+      <progress value="85" max="100"></progress>
+      <p>C++</p>
+      <progress value="75" max="100"></progress>
+      <p>PHP</p>
+      <progress value="70" max="100"></progress>
+      <p>JavaScript</p>
+      <progress value="80" max="100"></progress>
+    </div>
+
+    <div class="video">
+      <h2>Video & Audio</h2>
+      <div class="media-wrapper">
+        <video controls>
+          <source src="C:\Users\Rhenius\Downloads\Karunya University BTech Review _ Fees, Admission, Placements, Cutoff.mp4" type="video/mp4">
+        </video>
+        <audio controls>
+          <source src="C:\Users\Rhenius\Downloads\videoplayback.weba" type="audio/mpeg">
+        </audio>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forms Section -->
+  <form>
+    <div class="form-container">
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter Full Name">
+
+        <label>User Name</label>
+        <input type="text" placeholder="Enter User Name">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter Password">
+
+        <label>Register Number</label>
+        <input type="text" placeholder="URK24CSXXXX">
+
+        <label>Age</label>
+        <input type="number">
+
+        <label>Gender</label><br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <br><br>
+
+        <label>Date of Birth</label>
+        <input type="date">
+
+        <label>Favourite Color</label>
+        <input type="color">
+        <br><br>
+
+        <label>Upload Photo</label>
+        <input type="file">
+      </fieldset>
+
+      <!-- Contact Information -->
+      <fieldset>
+        <legend>Contact Information</legend>
+        <label>Address</label>
+        <textarea rows="3"></textarea>
+
+        <label>State</label>
+        <select>
+          <option>Select State</option>
+          <option>Tamil Nadu</option>
+          <option>Kerala</option>
+          <option>Karnataka</option>
+          <option>Andhra Pradesh</option>
+        </select>
+
+        <label>Zip Code</label>
+        <input type="number">
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="9876543210">
+
+        <label>Email</label>
+        <input type="email" placeholder="abc@gmail.com">
+
+        <label>Website</label>
+        <input type="url" placeholder="https://example.com">
+
+        <br>
+        <input type="checkbox"> I agree to the above information.
+        <br><br>
+        <input type="submit" value="Submit" style="background:#9c27b0;color:white;padding:10px 24px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">
+        <input type="reset" value="Reset" style="background:#757575;color:white;padding:10px 24px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">
+      </fieldset>
+    </div>
+
+    <!-- Embedded Document & Map Split View -->
+    <div class="bottom">
+      <div class="bottom-card">
+        <h2>Embedded Document</h2>
+        <embed src="C:\Users\Rhenius\Downloads\Rhenius N 1156 Resume.pdf" type="application/pdf">
+      </div>
+      <div class="bottom-card">
+        <h2>Location</h2>
+        <iframe src="https://www.google.com/maps?q=Karunya%20Institute%20of%20Technology%20and%20Sciences&output=embed"></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <h3>Contact</h3>
+      <p>📍 Coimbatore, Tamil Nadu</p>
+      <p>✉ info@karunya.edu</p>
+      <p>📞 +91 9876543210</p>
+      <br>
+      <p>&copy; 2026 Web Technology Lab</p>
+    </footer>
+  </form>
+</div>
+
+</body>
+</html>
