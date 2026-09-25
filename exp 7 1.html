@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Employee Organization Explorer - URK24CS1156</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+body{font-family:Arial;text-align:center;background:#e8f4ff}
+.organization{width:400px;margin:25px auto;padding:25px;background:white;
+border-radius:12px;box-shadow:0 5px 15px #9bb7d4}
+.team{background:#dbeafe;margin:10px 0;padding:12px;border-radius:6px}
+.employee{display:inline-block;padding:7px;margin:4px;background:white;
+border:1px solid #60a5fa;border-radius:4px;cursor:pointer}
+.employee:hover{background:#bfdbfe}
+button{background:#2563eb;color:white;border:0;padding:7px 10px;
+margin:4px;border-radius:4px;cursor:pointer}
+button:hover{background:#1d4ed8}
+#result{margin:20px auto;width:400px;padding:15px;background:white;
+border-radius:8px;box-shadow:0 3px 10px #b0c4d8}
+.selected{background:#93c5fd;border:2px solid #1e40af}
+</style>
+</head>
+
+<body>
+
+<h2>5. Employee Organization Explorer - URK24CS1156</h2>
+
+<div class="organization">
+<h2>Project Alpha</h2>
+
+<div class="team">
+<h3>Development Team</h3>
+<span class="employee">Arun - Developer</span>
+<span class="employee">Kavya - Senior Developer</span>
+<span class="employee">Rahul - Developer</span>
+</div>
+
+<div class="team">
+<h3>Testing Team</h3>
+<span class="employee">Meena - Tester</span>
+<span class="employee">Priya - Senior Tester</span>
+<span class="employee">Karthik - Tester</span>
+</div>
+</div>
+
+<button id="select">Select Employee</button>
+<button id="parent">Show Parent Team</button>
+<button id="ancestors">Show All Ancestors</button>
+<button id="project">Show Project Employees</button>
+<button id="team">Show Teammates</button>
+<button id="senior">Show Senior Employees</button>
+<button id="reset">Reset</button>
+
+<div id="result">Select an employee and choose an operation.</div>
+
+<script>
+$(function(){
+let selected=null;
+
+$(".employee").click(function(){
+    $(".employee").removeClass("selected");
+    $(this).addClass("selected");
+    selected=$(this);
+    $("#result").text("Selected: "+selected.text());
+});
+
+$("#select").click(function(){
+    let n=prompt("Enter employee name:");
+    $(".employee").each(function(){
+        if($(this).text().toLowerCase().includes(n.toLowerCase())){
+            $(".employee").removeClass("selected");
+            $(this).addClass("selected");
+            selected=$(this);
+            $("#result").text("Selected: "+$(this).text());
+        }
+    });
+});
+
+$("#parent").click(function(){
+    $("#result").text(selected?
+    "Parent Team: "+selected.parent().find("h3").text():
+    "Select an employee first.");
+});
+
+$("#ancestors").click(function(){
+    $("#result").text(selected?
+    "Ancestors: Project Alpha → "+selected.parent().find("h3").text():
+    "Select an employee first.");
+});
+
+$("#project").click(function(){
+    let x="";
+    $(".employee").each(function(){x+=$(this).text()+", ";});
+    $("#result").text("Project Employees: "+x);
+});
+
+$("#team").click(function(){
+    if(!selected)return $("#result").text("Select an employee first.");
+    let x="";
+    selected.parent().find(".employee").each(function(){x+=$(this).text()+", ";});
+    $("#result").text("Teammates: "+x);
+});
+
+$("#senior").click(function(){
+    let x="";
+    $(".employee").each(function(){
+        if($(this).text().includes("Senior"))x+=$(this).text()+", ";
+    });
+    $("#result").text("Senior Employees: "+x);
+});
+
+$("#reset").click(function(){
+    $(".employee").removeClass("selected");
+    selected=null;
+    $("#result").text("Select an employee and choose an operation.");
+});
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Football Card - jQuery Effects URK24CS1156</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+body{font-family:Arial;text-align:center;background:#e8f5e9}
+.container{width:500px;margin:40px auto}
+#product{background:white;padding:25px;border:2px solid #16823b;border-radius:10px}
+button{padding:10px 15px;margin:5px;border:0;background:#16823b;color:white;border-radius:5px}
+#message{font-weight:bold;margin:20px}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Football Player Details URK24CS1156</h2>
+<div id="product">
+<h2>⚽ Lionel Messi</h2>
+<p><b>Position:</b> Forward</p>
+<p><b>Team:</b> Inter Miami</p>
+<p><b>Jersey Number:</b> 10</p>
+<p><b>Nationality:</b> Argentina</p>
+<p><b>Description:</b> One of the greatest football players known for his dribbling and finishing.</p>
+</div><br>
+<button id="show">Show</button>
+<button id="hide">Hide</button>
+<button id="fade">Fade</button>
+<button id="slide">Slide</button>
+<button id="animate">Animate</button>
+<button id="stop">Stop Animation</button>
+<button id="callback">Callback</button>
+<button id="chain">Chaining</button>
+<button id="reset">Reset</button>
+<div id="message"></div>
+</div>
+<script>
+$(document).ready(function(){
+$("#show").click(function(){$("#product").show();});
+$("#hide").click(function(){$("#product").hide();});
+$("#fade").click(function(){$("#product").fadeToggle(1000);});
+$("#slide").click(function(){$("#product").slideToggle(1000);});
+$("#animate").click(function(){$("#product").animate({width:"300px",opacity:.5},1000);});
+$("#stop").click(function(){$("#product").stop();});
+$("#callback").click(function(){$("#product").hide(1000,function(){$("#message").text("Player card hidden!");});});
+$("#chain").click(function(){$("#product").slideUp(500).slideDown(500).fadeTo(500,1);});
+$("#reset").click(function(){$("#product").show().css({width:"auto",opacity:1});$("#message").text("");});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Workshop</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+body{text-align:center;font-family:Arial}
+#car{width:200px;height:100px;margin:40px auto;position:relative}
+#body{width:180px;height:45px;background:lime;position:absolute;top:30px}
+#roof{width:80px;height:30px;background:green;position:absolute;left:50px}
+.w{width:25px;height:25px;background:lightblue;position:absolute;top:35px}
+#w1{left:60px}.w2{left:100px}
+.t{width:35px;height:35px;background:#111;border-radius:50%;position:absolute;top:65px}
+#t1{left:30px}#t2{right:30px}
+button{margin:4px}  
+</style>
+<script>
+$(function(){
+ $("#color").click(()=>$("#body").css("background","red"));
+ $("#glass").click(()=>$(".w").css("background","black"));
+ $("#inc").click(()=>$(".t").css({"width":"50px","height":"50px"}));
+ $("#dec").click(()=>$(".t").css({"width":"25px","height":"25px"}));
+ $("#reset").click(function(){
+  $("#body").css("background","lime");
+  $(".w").css("background","lightblue");
+  $(".t").css({"width":"35px","height":"35px"});
+ });
+});
+</script>
+</head>
+<body>
+<h3>Car Workshop</h3>
+<div id="car">
+<div id="roof"></div><div id="body"></div>
+<div class="w" style="left:60px"></div>
+<div class="w" style="left:100px"></div>
+<div class="t" id="t1"></div><div class="t" id="t2"></div>
+</div>
+<button id="color">Change Car Color</button>
+<button id="glass">Change Glass Color</button>
+<button id="inc">Tyre Size Increase</button>
+<button id="dec">Tyre Size Decrease</button>
+<button id="reset">Reset</button>
+</body>
+</html>
